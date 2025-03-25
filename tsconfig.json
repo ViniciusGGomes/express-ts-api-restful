@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2023", // Define a versão do JavaScript que será gerada no código compilado (ES2023 é a mais recente).
+    "lib": ["ES2023"], // Especifica as bibliotecas disponíveis no ambiente, como recursos de ES2023.
+
+    /* Modules */
+    "module": "node16", // Configura o sistema de módulos para usar o padrão do Node.js versão 16 (ECMAScript Modules).
+    "esModuleInterop": true, // Permite interoperabilidade entre módulos CommonJS e ESModules, facilitando a importação.
+
+    "forceConsistentCasingInFileNames": true, // Garante consistência no uso de letras maiúsculas/minúsculas em nomes de arquivos.
+
+    /* Type Checking */
+    "strict": true, // Ativa o modo estrito, que aplica verificações rigorosas de tipagem e ajuda a evitar erros.
+    "skipLibCheck": true // Ignora verificações de tipo em arquivos de definição de biblioteca (*.d.ts), reduzindo o tempo de compilação.
+  }
+}
