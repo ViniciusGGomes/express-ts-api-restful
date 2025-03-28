@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { AppError } from "../utils/AppError";
+import { z } from "zod";
 
 export class ProductsControllers {
   /**
@@ -24,27 +25,37 @@ export class ProductsControllers {
    */
 
   create(request: Request, response: Response) {
-    const { name, price } = request.body;
+    const bodySchema = z.object({
+      name: z
+        .string({ required_error: "Name is required" })
+        .trim()
+        .min(6, { message: "Name must be 6 or more characters" }),
+      price: z
+        .number({ required_error: "Price is required" })
+        .positive({ message: "Price must be positive" }),
+    });
 
-    if (!name) {
-      throw new AppError("Nome do produto é obrigatório");
-    }
+    const { name, price } = bodySchema.parse(request.body);
 
-    if (name.trim().length < 6) {
-      throw new AppError("Nome do produto precisa ter pelo menos 6 caracteres");
-    }
+    response.status(201).json({ name, price, user_id: request.user_id });
 
-    if (!price) {
-      throw new AppError("Preço do produto é obrigatório");
-    }
+    // if (!name) {
+    //   throw new AppError("Nome do produto é obrigatório");
+    // }
 
-    if (price < 0) {
-      throw new AppError("Preço do produto não pode seer menor do que zero");
-    }
+    // if (name.trim().length < 6) {
+    //   throw new AppError("Nome do produto precisa ter pelo menos 6 caracteres");
+    // }
+
+    // if (!price) {
+    //   throw new AppError("Preço do produto é obrigatório");
+    // }
+
+    // if (price < 0) {
+    //   throw new AppError("Preço do produto não pode seer menor do que zero");
+    // }
 
     // throw new Error("Erro ao tentar criar um produto");
     // throw new AppError("Erro ao tentar criar um produto");
-
-    response.status(201).json({ name, price, user_id: request.user_id });
   }
 }
