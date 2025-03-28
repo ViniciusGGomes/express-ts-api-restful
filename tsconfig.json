@@ -12,6 +12,7 @@
 
     /* Type Checking */
     "strict": true, // Ativa o modo estrito, que aplica verificações rigorosas de tipagem e ajuda a evitar erros.
-    "skipLibCheck": true // Ignora verificações de tipo em arquivos de definição de biblioteca (*.d.ts), reduzindo o tempo de compilação.
+    "skipLibCheck": true, // Ignora verificações de tipo em arquivos de definição de biblioteca (*.d.ts), reduzindo o tempo de compilação.
+
   }
 }
