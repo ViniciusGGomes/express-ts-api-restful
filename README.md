@@ -17,4 +17,3 @@ Uma API RESTful para gerenciamento de tickets de suporte técnico, desenvolvida 
 - Validação robusta com **Zod schemas**
 - Sistema de middlewares customizados
 - Tratamento profissional de erros
-- Persistência em arquivo JSON
