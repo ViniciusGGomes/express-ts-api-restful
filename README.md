@@ -1,2 +1,20 @@
-# express-ts-api-restful
-Um projeto de estudo e prática com Node.js, Express e TypeScript para o desenvolvimento de APIs RESTful. Inclui conceitos de roteamento, manipulação de parâmetros, middlewares e boas práticas na construção de APIs.
+# 🚀 Projeto de API RESTful com Node.js, TypeScript e Zod
+
+Uma API RESTful para gerenciamento de tickets de suporte técnico, desenvolvida como projeto de aprendizado das tecnologias back-end modernas.
+
+## ✨ Tecnologias Utilizadas
+
+- **Node.js** (v18+)
+- **TypeScript** (Configuração ES2023)
+- **Express** (Framework para rotas e middlewares)
+- **Zod** (Validação de schemas)
+- **TSX** (Execução em tempo de desenvolvimento)
+
+![Imagem do projeto](./img/API_REST.png)
+
+## 🔧 Funcionalidades Principais
+
+- Validação robusta com **Zod schemas**
+- Sistema de middlewares customizados
+- Tratamento profissional de erros
+- Persistência em arquivo JSON
